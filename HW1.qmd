@@ -1,7 +1,7 @@
 ---
 title: "HW 1"
-format: gfm
-editor: visual
+format: html
+editor: source
 ---
 
 For this dataset we will use the following data set containing location of elk in Banff National Park (Canada). Additional information can be found at [movebank link](https://datarepository.movebank.org/entities/datapackage/aed22923-281d-4583-aefd-140f1497539a/full).
