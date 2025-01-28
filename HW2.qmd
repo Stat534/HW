@@ -1,6 +1,6 @@
 ---
 title: "HW 2"
-format: gfm
+format: pdf
 editor: visual
 ---
 
