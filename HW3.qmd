@@ -1,0 +1,45 @@
+---
+title: "HW 3: key"
+format: pdf
+editor: source
+---
+
+```{r}
+#| message: false
+#| echo: false
+library(tidyverse)
+library(spatstat)
+```
+
+## Question 1 (4 points)
+
+Recall the elk dataset from HW 1. Investigate whether this dataset exhibits CSR. Justify your findings with a paragraph summary.
+
+```{r, echo=T}
+elk <- read_csv('https://raw.githubusercontent.com/Stat534/data/refs/heads/main/elk.csv')
+```
+
+## Question 2
+
+In this question we are going to simulate and fit a dataset with spatial covariates.
+
+### 2.1 (3 points)
+
+Create a set of at least two spatial covariates that will be related to your intensity surface. Note you'll want to explore the `im()` function which allows you to create a pixel-image. Plot your spatial covariates.
+
+
+### 2.2 (3 points)
+
+Construct and plot your intensity surface, this should use the covariates from 2.2 and at least one of the x or y coordinate values.
+
+### 2.3 (3 points)
+
+Determine and justify whether your surface exhibits CSR.
+
+### 2.4 (3 points)
+
+Model your intensity surface and summarize your results. How close are your parameter estimates?
+
+### 2.5 (3 points)
+
+Compare how well your estimated intensity surface matches with the true generated intensity surface.
