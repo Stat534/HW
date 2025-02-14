@@ -1,0 +1,71 @@
+---
+title: "HW 4"
+format: pdf
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| message: false
+#| echo: false
+library(tidyverse)
+library(spatstat)
+```
+
+## Question 1:
+
+For this question, consider the two point patterns generated below.
+
+```{r}
+set.seed(02142025)
+Z <- rStraussHard(beta = 100, gamma = 1, R = .1, H = .08)
+plot(Z)
+```
+
+```{r}
+nclust2 <- function(x0, y0, radius, n, types=c("a", "b")) {
+  X <- runifdisc(n, radius, centre=c(x0, y0))
+  M <- sample(types, n, replace=TRUE)
+  marks(X) <- M
+  return(X)
+}
+
+Z2 <- rNeymanScott(15,0.1,nclust2, radius=0.1, n=5)
+plot(Z2)
+
+```
+
+### 1.1 (4 points): 
+
+Compare and contrast the Neyman-Scott Process with the Strauss Hardcore process
+
+### 1.2 (2 points): 
+
+Give an example of real-world situation that could be modeled using a Neyman-Scott Process.
+
+### 1.3 (2 points): 
+
+Give an example of real-world situation that could be modeled using a Strass Hardcore Process.
+
+
+## Question 2 (10 points)
+
+Assume you've been given the point pattern `pp_out` and four potential explanatory covariates, `X1`, `X2`, `X3`, and `X4`. Carry out an analysis to choose the best representation of the intensity surface. Summarize your results - include figures and a written description.
+
+```{r}
+load(url('https://github.com/Stat534/HW/raw/refs/heads/main/ims.RData'))
+plot(pp_out)
+```
+
+## Question 3 (2 points)
+
+How do intensity and density surfaces differ?
+
+## Question 4 (2 points)
+
+What are strengths and weaknesses of leaflet for spatial visualization?
+
+## Question 4 (2 points)
+
+What is a marked point process?
