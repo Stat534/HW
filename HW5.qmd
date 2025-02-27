@@ -1,0 +1,18 @@
+---
+title: "HW 5"
+format: pdf
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| message: false
+#| echo: false
+library(tidyverse)
+library(spatstat)
+```
+
+## Question 1 (5 points)
+
+Following the video lecture, simulate code from a simple linear model and run the stan code to fit that model.
