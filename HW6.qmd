@@ -1,0 +1,68 @@
+---
+title: "HW 6"
+format: pdf
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| message: false
+#| echo: false
+library(tidyverse)
+library(spatstat)
+```
+
+## Question 1 
+
+This question continues the exercise at the end of activity 8 / start of activity 9. Consider adding another term to our working exponential covariance function such that
+
+$$\sigma_{i,j} = \sigma^2 \exp \left(- d_{ij} /\phi \right) + \tau^2$$
+
+### 1. (2 points)
+
+Create a plot that simulates a surface with $\sigma^2 = 1$ and $\tau^2 = 0$. Use a high resolution grid to visualize this surface.
+
+### 2. (2 points)
+
+Create a plot that simulates a surface with $\sigma^2 = 0$ and $\tau^2 = 1$. Use a high resolution grid to visualize this surface.
+
+### 3. (2 points)
+
+Create a plot that simulates a surface with $\phi = 0$ and $\tau^2 = 1$. Use a high resolution grid to visualize this surface.
+
+
+### 4. (3 points)
+
+Discuss the differences in the plots in parts 1.1, 1.2, and 1.3. How do the parameters contribute to those differences?
+
+### 5. (3 points)
+
+Broadly interpret how $\sigma^2$, $\tau^2$, and $\phi$ impact the covariance structure in the spatial surface.
+
+
+Now we have introduced two new parameters into this function. What do you suppose that they do?
+
+- $\sigma^2$: controls the magnitude of the covariance.
+
+\vfill
+
+- $\phi$: controls the range of the spatial correlation
+
+
+## Question 2 
+
+
+Building on the model framework from the previous question, simulate data from the following model
+
+$$y \sim N(\mu, \Sigma)$$
+$$\sigma_{i,j} = \sigma^2 \exp \left(- d_{ij} /\phi \right) + \tau^2$$
+where $\sigma^2 = 5$, $\tau^2 = 1$, you can choose $\phi$.
+
+### 1. (4 points)
+
+Visualize a draw from this spatial random surface with $n = 50$ points.
+
+### 2. (4 points)
+
+Use STAN code to estimate the model parameters. How do your results match your expectations?
