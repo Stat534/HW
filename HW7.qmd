@@ -1,0 +1,39 @@
+---
+title: "HW 7"
+format: pdf
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| message: false
+#| echo: false
+library(tidyverse)
+library(spatstat)
+```
+
+## Question 1 
+
+Continuing from Q2 of HW6. 
+
+
+
+### 1. (5 points)
+
+Simulate data from this model
+
+$$y \sim N(\mu, \Sigma)$$
+
+$$\sigma_{i,j} = \sigma^2 \exp \left(- d_{ij} /\phi \right) + \tau^2$$
+
+where $\sigma^2 = 5$, $\tau^2 = 1$, you can choose $\phi$.
+
+Again sample 50 data points from the simulated surface. 
+
+### 1. (5 points)
+
+Using these 50 points, create a variogram. Discuss how the shape of the variogram compares to what you'd expect. Similarly, how does the variogram do at estimating the parameters in the model?
+
+### 2. (5 points)
+Fit the model and make predictions over the entire space. Compare your predictions (the mean) with the simulated surface.
